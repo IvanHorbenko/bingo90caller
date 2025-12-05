@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Free Online Bingo Caller 1–90 | UK 90-Ball Bingo Number Generator</title>
+
+  <!-- Basic SEO -->
+  <meta name="description" content="Free online 90-ball bingo caller 1-90 with British female voice, classic bingo calls, and a shiny 'ding' sound. Perfect for pub quizzes, bingo nights, parties and classrooms." />
+  <meta name="keywords" content="bingo caller, online bingo caller, 90 ball bingo, 90-ball bingo caller, bingo number generator, bingo caller 1-90, uk bingo, pub quiz bingo, free bingo caller" />
+  <meta name="author" content="Bingo Caller 1-90" />
+
+  <!-- Open Graph for social sharing -->
+  <meta property="og:title" content="Free Online Bingo Caller 1–90 | UK 90-Ball Bingo Number Generator" />
+  <meta property="og:description" content="Call bingo numbers 1–90 with sound, British voice calls and a full 90-ball board. Great for pub nights, family games and events." />
+  <meta property="og:type" content="website" />
+
+  <style>
+    :root {
+      --bg: #0f1220;
+      --muted: #8a93b2;
+      --accent: #6ee7b7;
+      --accent-2: #60a5fa;
+      --danger: #fca5a5;
+      --text: #e8ecff;
+      --grid-on: #f59e0b;
+      --grid-off: #262a44;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: radial-gradient(1200px 700px at 70% -10%, #1a1f3a 0%, var(--bg) 60%);
+      color: var(--text);
+      font: 16px/1.5 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    .container { max-width: 1200px; margin: 24px auto; padding: 16px; }
+    .header {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:16px;
+    }
+    .title { font-weight:800; }
+    button {
+      appearance:none;
+      border:0;
+      border-radius:12px;
+      padding:12px 16px;
+      font-weight:700;
+      cursor:pointer;
+      color:#0b1020;
+      background:linear-gradient(180deg,var(--accent),#34d399);
+      box-shadow:0 8px 20px rgba(52,211,153,.35);
+    }
+    .btn-secondary { background:linear-gradient(180deg,var(--accent-2),#3b82f6); }
+    .btn-danger { background:linear-gradient(180deg,#fb7185,#f43f5e); color:#fff; }
+
+    .bigball {
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      height:500px;
+      border-radius:24px;
+      background:radial-gradient(circle at 50% 40%, #1b2242, #0d1126 70%);
+      border:2px solid #3b4376;
+      box-shadow:0 0 80px rgba(59,130,246,0.3) inset, 0 0 30px rgba(59,130,246,0.3);
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+    .bigball.pop {
+      transform: scale(1.05);
+      box-shadow:0 0 120px rgba(245,158,11,0.6) inset, 0 0 40px rgba(245,158,11,0.5);
+    }
+    .bigball .n {
+      font-size:260px;
+      font-weight:900;
+      letter-spacing:2px;
+      text-shadow:0 10px 40px rgba(0,0,0,.5);
+      animation:fadeIn .5s ease;
+    }
+    .phrase {
+      font-size:20px;
+      color:var(--muted);
+      margin-top:12px;
+      text-align:center;
+      min-height:28px;
+      letter-spacing:0.5px;
+    }
+    @keyframes fadeIn {
+      from { opacity:0; transform:scale(0.7); }
+      to   { opacity:1; transform:scale(1);   }
+    }
+
+    .dropdown {
+      background:#161a31;
+      border:1px solid #2a2f52;
+      border-radius:12px;
+      overflow:hidden;
+      transition:max-height .4s ease;
+      margin-top:12px;
+    }
+    .dropdown-header {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:10px 14px;
+      cursor:pointer;
+      color:var(--accent-2);
+      font-weight:700;
+    }
+    .dropdown-header:hover { background:#1b2040; }
+    .dropdown-content { padding:10px; }
+
+    .board {
+      display:grid;
+      grid-template-columns:repeat(10,1fr);
+      gap:6px;
+    }
+    .cell {
+      aspect-ratio:1/1;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:10px;
+      font-weight:800;
+      border:1px solid #2a2f52;
+      background:var(--grid-off);
+      color:#a9b1d9;
+    }
+    .cell.on {
+      background:linear-gradient(180deg,#f59e0b,#d97706);
+      color:#0b0f1f;
+    }
+
+    .recent {
+      display:grid;
+      grid-template-columns:repeat(10,1fr);
+      gap:6px;
+    }
+    .recent span {
+      background:#1b2040;
+      border:1px solid #2a2f52;
+      padding:8px 0;
+      text-align:center;
+      border-radius:10px;
+      font-weight:800;
+      color:#c5cbf2;
+    }
+    .arrow { transition:transform .3s ease; }
+
+    .seo-text {
+      margin-top:24px;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .seo-text h2 {
+      font-size:18px;
+      color:var(--text);
+      margin-bottom:8px;
+    }
+    .seo-text p { margin:4px 0 8px; }
+    .seo-text ul {
+      margin:4px 0 8px 18px;
+      padding:0;
+    }
+    .seo-text li { margin-bottom:4px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="header">
+      <div class="title">
+        <h1>Online Bingo Caller 1–90</h1>
+        <small style="color:var(--muted)">
+          Free 90-ball bingo number generator with “ding” sound and British voice calls 🔔
+        </small>
+      </div>
+      <div>
+        <button id="drawBtn">🎱 Draw Number</button>
+        <button id="undoBtn" class="btn-secondary">↩️ Undo</button>
+        <button id="resetBtn" class="btn-danger">♻️ Reset</button>
+      </div>
+    </div>
+
+    <div class="bigball" id="bigBall">
+      <div class="n" id="current">—</div>
+      <div class="phrase" id="phrase"></div>
+    </div>
+
+    <div class="dropdown" id="recentDropdown">
+      <div class="dropdown-header" id="recentHeader">
+        <span>Last 10 numbers</span>
+        <span class="arrow" id="recentArrow">▼</span>
+      </div>
+      <div class="dropdown-content" id="recentContent">
+        <div class="recent" id="recent"></div>
+      </div>
+    </div>
+
+    <div class="dropdown" id="boardDropdown">
+      <div class="dropdown-header" id="boardHeader">
+        <span>Full 1–90 board (for the caller)</span>
+        <span class="arrow" id="boardArrow">▼</span>
+      </div>
+      <div class="dropdown-content" id="boardContent">
+        <div class="board" id="board"></div>
+      </div>
+    </div>
+
+    <!-- Extra text for SEO and for real users who scroll -->
+    <div class="seo-text">
+      <h2>Free 90-Ball Bingo Caller 1–90</h2>
+      <p>
+        This online bingo caller is designed for classic UK-style
+        <strong>90-ball bingo</strong>. It randomly draws numbers from 1 to 90,
+        highlights them on the full board, plays a short “ding” sound
+        and speaks the traditional bingo calls with a British English voice.
+      </p>
+      <p>
+        You can use this bingo number generator for:
+      </p>
+      <ul>
+        <li>Pub quizzes and bar bingo nights</li>
+        <li>Home bingo games with friends and family</li>
+        <li>Office parties and team-building events</li>
+        <li>School, classroom or charity bingo events</li>
+      </ul>
+      <p>
+        Press the <strong>“Draw Number”</strong> button or hit the
+        <strong>Space bar</strong> on your keyboard to call the next bingo number.
+        Use <strong>“Undo”</strong> if you made a mistake and
+        <strong>“Reset”</strong> to start a brand new 1–90 game.
+      </p>
+    </div>
+
+  </div>
+
+  <script>
+    const N_MAX = 90;
+    const state = {
+      pool: [...Array(N_MAX)].map((_, i) => i + 1),
+      drawn: []
+    };
+
+    const board = document.getElementById('board');
+    const current = document.getElementById('current');
+    const phraseEl = document.getElementById('phrase');
+    const recent = document.getElementById('recent');
+    const bigBall = document.getElementById('bigBall');
+    const drawBtn = document.getElementById('drawBtn');
+    const undoBtn = document.getElementById('undoBtn');
+    const resetBtn = document.getElementById('resetBtn');
+    const boardHeader = document.getElementById('boardHeader');
+    const boardContent = document.getElementById('boardContent');
+    const boardArrow = document.getElementById('boardArrow');
+    const recentHeader = document.getElementById('recentHeader');
+    const recentContent = document.getElementById('recentContent');
+    const recentArrow = document.getElementById('recentArrow');
+
+    const calls = {
+      1:  "Kelly’s Eye",
+      2:  "One Little Duck",
+      3:  "Cup of Tea",
+      4:  "Knock at the Door",
+      5:  "Man Alive",
+      6:  "Tom Mix",
+      7:  "Lucky Seven",
+      8:  "Garden Gate",
+      9:  "Doctor’s Orders",
+      10: "Boris’s Den",
+      11: "Legs Eleven",
+      12: "One Dozen",
+      13: "Unlucky for Some",
+      14: "Valentine’s Day",
+      15: "Young and Keen",
+      16: "Sweet Sixteen",
+      17: "Dancing Queen",
+      18: "Coming of Age",
+      19: "Goodbye Teens",
+      20: "One Score",
+      21: "Key of the Door",
+      22: "Two Little Ducks",
+      23: "Thee and Me",
+      24: "Two Dozen",
+      25: "Duck and Dive",
+      26: "Pick and Mix",
+      27: "Gateway to Heaven",
+      28: "Over Weight",
+      29: "Rise and Shine",
+      30: "Dirty Gertie",
+      31: "Get Up and Run",
+      32: "Buckle My Shoe",
+      33: "All the Threes",
+      34: "Ask for More",
+      35: "Jump and Jive",
+      36: "Three Dozen",
+      37: "More than Eleven",
+      38: "Christmas Cake",
+      39: "Steps",
+      40: "Life Begins",
+      41: "Time for Fun",
+      42: "Winnie the Pooh",
+      43: "Down on Your Knees",
+      44: "Droopy Drawers",
+      45: "Halfway There",
+      46: "Up to Tricks",
+      47: "Four and Seven",
+      48: "Four Dozen",
+      49: "PC",
+      50: "Half a Century",
+      51: "Tweak of the Thumb",
+      52: "Danny La Rue",
+      53: "Stuck in a Tree",
+      54: "Clean the Floor",
+      55: "Snakes Alive",
+      56: "Was She Worth It?",
+      57: "Heinz Varieties",
+      58: "Make Them Wait",
+      59: "Brighton Line",
+      60: "Five Dozen",
+      61: "Baker’s Bun",
+      62: "Turn on the Screw",
+      63: "Tickle Me 63",
+      64: "Red Raw",
+      65: "Old Age Pension",
+      66: "Clickety Click",
+      67: "Made in Heaven",
+      68: "Saving Grace",
+      69: "Anyway Up",
+      70: "Three Score and Ten",
+      71: "Bang on the Drum",
+      72: "Six Dozen",
+      73: "Queen Bee",
+      74: "Candy Store",
+      75: "Strive and Strive",
+      76: "Trombones",
+      77: "Sunset Strip",
+      78: "Heaven’s Gate",
+      79: "One More Time",
+      80: "Gandhi’s Dinner",
+      81: "Stop and Run",
+      82: "Straight On Through",
+      83: "Time for Tea",
+      84: "Seven Dozen",
+      85: "Staying Alive",
+      86: "Between the Sticks",
+      87: "Torquay in Devon",
+      88: "Two Fat Ladies",
+      89: "Nearly There",
+      90: "Top of the Shop"
+    };
+
+    const cells = new Map();
+    for (let n = 1; n <= N_MAX; n++) {
+      const el = document.createElement('div');
+      el.className = 'cell';
+      el.textContent = n;
+      board.appendChild(el);
+      cells.set(n, el);
+    }
+
+    function draw() {
+      if (state.pool.length === 0) return;
+      playChime();
+      const idx = Math.floor(Math.random() * state.pool.length);
+      const n = state.pool.splice(idx, 1)[0];
+      state.drawn.push(n);
+      render();
+      speakCall(n);
+      bigBall.classList.add('pop');
+      setTimeout(() => bigBall.classList.remove('pop'), 400);
+    }
+
+    function undo() {
+      if (!state.drawn.length) return;
+      const n = state.drawn.pop();
+      state.pool.push(n);
+      state.pool.sort((a, b) => a - b);
+      render();
+    }
+
+    function reset() {
+      state.pool = [...Array(N_MAX)].map((_, i) => i + 1);
+      state.drawn = [];
+      render();
+    }
+
+    function render() {
+      const n = state.drawn.length ? state.drawn[state.drawn.length - 1] : '—';
+      current.textContent = n;
+      const phrase = calls[n] || '';
+      phraseEl.textContent = phrase;
+
+      for (const [num, el] of cells) {
+        el.classList.toggle('on', state.drawn.includes(num));
+      }
+
+      recent.innerHTML = state.drawn
+        .slice(-10)
+        .reverse()
+        .map(num => `<span>${num}</span>`)
+        .join('');
+    }
+
+    function speakCall(n) {
+      const phrase = calls[n] || n;
+      const msg = new SpeechSynthesisUtterance(`Number ${n}, ${phrase}`);
+      msg.lang = 'en-GB';
+      msg.rate = 0.95;
+      msg.pitch = 1.3;
+      const voices = speechSynthesis.getVoices();
+      msg.voice =
+        voices.find(
+          v =>
+            v.lang === 'en-GB' &&
+            v.name.toLowerCase().includes('female')
+        ) || null;
+      speechSynthesis.speak(msg);
+    }
+
+    function playChime() {
+      const Ctx = window.AudioContext || window.webkitAudioContext;
+      if (!Ctx) return;
+      const ctx = new Ctx();
+      const osc1 = ctx.createOscillator();
+      const osc2 = ctx.createOscillator();
+      const gain = ctx.createGain();
+
+      osc1.type = 'sine';
+      osc2.type = 'triangle';
+      osc1.frequency.setValueAtTime(1500, ctx.currentTime);
+      osc2.frequency.setValueAtTime(2250, ctx.currentTime);
+
+      gain.gain.setValueAtTime(0.001, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.4, ctx.currentTime + 0.02);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.3);
+
+      osc1.connect(gain).connect(ctx.destination);
+      osc2.connect(gain).connect(ctx.destination);
+
+      osc1.start();
+      osc2.start();
+      osc1.stop(ctx.currentTime + 0.3);
+      osc2.stop(ctx.currentTime + 0.3);
+    }
+
+    function setupDropdown(header, content, arrow) {
+      let expanded = false;
+      header.onclick = () => {
+        expanded = !expanded;
+        content.style.display = expanded ? 'block' : 'none';
+        arrow.style.transform = expanded ? 'rotate(180deg)' : 'rotate(0deg)';
+      };
+      content.style.display = 'none';
+    }
+
+    setupDropdown(boardHeader, boardContent, boardArrow);
+    setupDropdown(recentHeader, recentContent, recentArrow);
+
+    drawBtn.onclick = draw;
+    undoBtn.onclick = undo;
+    resetBtn.onclick = reset;
+
+    window.addEventListener('keydown', e => {
+      if (e.code === 'Space') {
+        e.preventDefault();
+        draw();
+      }
+    });
+
+    // Ensure voices are loaded in some browsers
+    if (typeof speechSynthesis !== 'undefined') {
+      speechSynthesis.onvoiceschanged = () => {};
+    }
+
+    render();
+  </script>
+</body>
+</html>
