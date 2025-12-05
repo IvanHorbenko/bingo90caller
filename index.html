@@ -2,7 +2,7 @@
 <html lang="en">
 <head> 
   <meta charset="UTF-8" />
-   <meta name="google-site-verification" content="62P0o1RtoXABlnvngUw8lephpft6xGgJBZhnTGffOUI" />
+  <meta name="google-site-verification" content="62P0o1RtoXABlnvngUw8lephpft6xGgJBZhnTGffOUI" />
   <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7293772179012392"
        crossorigin="anonymous"></script>
@@ -72,7 +72,6 @@
 }
 </script>
 
-
   <style>
     :root {
       --bg: #0f1220;
@@ -100,6 +99,14 @@
       gap:16px;
     }
     .title { font-weight:800; }
+
+    .controls {
+      display:flex;
+      align-items:center;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+
     button {
       appearance:none;
       border:0;
@@ -113,6 +120,21 @@
     }
     .btn-secondary { background:linear-gradient(180deg,var(--accent-2),#3b82f6); }
     .btn-danger { background:linear-gradient(180deg,#fb7185,#f43f5e); color:#fff; }
+
+    /* Mute button */
+    .mute-btn {
+      background:#2b324e;
+      color:var(--text);
+      box-shadow:none;
+      font-size:14px;
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+    }
+    .mute-btn.muted {
+      opacity:0.7;
+      background:#1e2338;
+    }
 
     .bigball {
       display:flex;
@@ -223,65 +245,65 @@
       padding:0;
     }
     .seo-text li { margin-bottom:4px; }
+
     /* Footer SEO block */
-.footer-seo {
-  margin-top: 32px;
-  padding: 20px 0 40px;
-  border-top: 1px solid #2a2f52;
-  color: var(--muted);
-  font-size: 14px;
-}
+    .footer-seo {
+      margin-top: 32px;
+      padding: 20px 0 40px;
+      border-top: 1px solid #2a2f52;
+      color: var(--muted);
+      font-size: 14px;
+    }
 
-.footer-seo h2 {
-  font-size: 18px;
-  color: var(--text);
-  margin-bottom: 12px;
-}
+    .footer-seo h2 {
+      font-size: 18px;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
 
-.footer-seo details {
-  background: #161a31;
-  border-radius: 10px;
-  border: 1px solid #2a2f52;
-  margin-bottom: 10px;
-  padding: 10px 14px;
-}
+    .footer-seo details {
+      background: #161a31;
+      border-radius: 10px;
+      border: 1px solid #2a2f52;
+      margin-bottom: 10px;
+      padding: 10px 14px;
+    }
 
-.footer-seo summary {
-  cursor: pointer;
-  font-weight: 600;
-  color: var(--text);
-  outline: none;
-  list-style: none;
-}
+    .footer-seo summary {
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--text);
+      outline: none;
+      list-style: none;
+    }
 
-.footer-seo summary::-webkit-details-marker {
-  display: none;
-}
+    .footer-seo summary::-webkit-details-marker {
+      display: none;
+    }
 
-.footer-seo summary::after {
-  content: "▾";
-  float: right;
-  transition: transform 0.2s ease;
-  opacity: 0.7;
-}
+    .footer-seo summary::after {
+      content: "▾";
+      float: right;
+      transition: transform 0.2s ease;
+      opacity: 0.7;
+    }
 
-.footer-seo details[open] summary::after {
-  transform: rotate(180deg);
-}
+    .footer-seo details[open] summary::after {
+      transform: rotate(180deg);
+    }
 
-.footer-seo p,
-.footer-seo ul {
-  margin: 6px 0 8px;
-}
+    .footer-seo p,
+    .footer-seo ul {
+      margin: 6px 0 8px;
+    }
 
-.footer-seo ul {
-  padding-left: 18px;
-}
+    .footer-seo ul {
+      padding-left: 18px;
+    }
 
-.footer-seo li {
-  margin-bottom: 4px;
-}
-
+    .footer-seo li {
+      margin-bottom: 4px;
+    }
   </style>
 </head>
 <body>
@@ -294,7 +316,8 @@
           Free 90-ball bingo number generator with “ding” sound and British voice calls 🔔
         </small>
       </div>
-      <div>
+      <div class="controls">
+        <button id="muteToggle" class="mute-btn" aria-pressed="false">🔊 Sound on</button>
         <button id="drawBtn">🎱 Draw Number</button>
         <button id="undoBtn" class="btn-secondary">↩️ Undo</button>
         <button id="resetBtn" class="btn-danger">♻️ Reset</button>
@@ -351,74 +374,75 @@
         <strong>“Reset”</strong> to start a brand new 1–90 game.
       </p>
     </div>
-<section class="footer-seo">
-  <h2>Learn more about this 90-ball bingo caller</h2>
 
-  <details open>
-    <summary>What is a 90-ball bingo caller?</summary>
-    <p>
-      A 90-ball bingo caller is a tool that draws random numbers from 1 to 90
-      without repetition and announces them for players. It replaces the
-      traditional physical bingo machine and makes it easy to host bingo
-      nights at home, in pubs, offices or community events.
-    </p>
-    <p>
-      This online caller works in your browser, so you don't need to install
-      anything. Just connect your screen and speakers and you are ready to run
-      a full 90-ball bingo game.
-    </p>
-  </details>
+    <section class="footer-seo">
+      <h2>Learn more about this 90-ball bingo caller</h2>
 
-  <details>
-    <summary>How to use this online bingo caller</summary>
-    <ul>
-      <li>Press <strong>"Draw Number"</strong> or hit the <strong>Space bar</strong> to call the next number.</li>
-      <li>Listen to the British voice callout and see the number on the big board.</li>
-      <li>Numbers are automatically marked on the 1–90 grid so you can track progress.</li>
-      <li>If you make a mistake, use <strong>"Undo"</strong> to return the last number.</li>
-      <li>When the game is finished, press <strong>"Reset"</strong> to start a new 90-ball game.</li>
-    </ul>
-    <p>
-      You can mirror the screen to a TV or projector for larger groups and
-      use this caller for pub quizzes, charity events, family parties or
-      bingo in retirement homes.
-    </p>
-  </details>
+      <details open>
+        <summary>What is a 90-ball bingo caller?</summary>
+        <p>
+          A 90-ball bingo caller is a tool that draws random numbers from 1 to 90
+          without repetition and announces them for players. It replaces the
+          traditional physical bingo machine and makes it easy to host bingo
+          nights at home, in pubs, offices or community events.
+        </p>
+        <p>
+          This online caller works in your browser, so you don't need to install
+          anything. Just connect your screen and speakers and you are ready to run
+          a full 90-ball bingo game.
+        </p>
+      </details>
 
-  <details>
-    <summary>FAQ – common questions</summary>
-    <p><strong>Does this bingo caller cost anything?</strong><br>
-      No, this 90-ball bingo caller is completely free to use for private and
-      non-commercial events.
-    </p>
-    <p><strong>Can numbers repeat?</strong><br>
-      No. Each number between 1 and 90 is drawn only once per game. When all
-      numbers are used, the caller automatically stops.</p>
-    <p><strong>Can I use it for pub quizzes and events?</strong><br>
-      Yes, this tool is ideal for pub bingo nights, office parties and local
-      community events. Just make sure your venue allows online tools and sound.</p>
-    <p><strong>Does it work on mobile phones and tablets?</strong><br>
-      Yes. The caller runs in any modern browser on desktop, laptop, tablet or
-      mobile. For larger groups we recommend connecting to a bigger screen.</p>
-    <p><strong>Is the voice always in British English?</strong><br>
-      By default the caller uses a British English voice. The exact voice may
-      depend on your browser and system speech settings.</p>
-  </details>
+      <details>
+        <summary>How to use this online bingo caller</summary>
+        <ul>
+          <li>Press <strong>"Draw Number"</strong> or hit the <strong>Space bar</strong> to call the next number.</li>
+          <li>Listen to the British voice callout and see the number on the big board.</li>
+          <li>Numbers are automatically marked on the 1–90 grid so you can track progress.</li>
+          <li>If you make a mistake, use <strong>"Undo"</strong> to return the last number.</li>
+          <li>When the game is finished, press <strong>"Reset"</strong> to start a new 90-ball game.</li>
+        </ul>
+        <p>
+          You can mirror the screen to a TV or projector for larger groups and
+          use this caller for pub quizzes, charity events, family parties or
+          bingo in retirement homes.
+        </p>
+      </details>
 
-  <details>
-    <summary>About this project</summary>
-    <p>
-      This website was created as a simple, fast and accessible
-      <strong>90-ball online bingo caller</strong> for people who host bingo
-      nights with friends, family or colleagues. There is no registration,
-      no download and no personal data required to use the tool.
-    </p>
-    <p>
-      If you find this bingo caller useful, feel free to share the link with
-      your friends or use it at your next quiz or bingo night.
-    </p>
-  </details>
-</section>
+      <details>
+        <summary>FAQ – common questions</summary>
+        <p><strong>Does this bingo caller cost anything?</strong><br>
+          No, this 90-ball bingo caller is completely free to use for private and
+          non-commercial events.
+        </p>
+        <p><strong>Can numbers repeat?</strong><br>
+          No. Each number between 1 and 90 is drawn only once per game. When all
+          numbers are used, the caller automatically stops.</p>
+        <p><strong>Can I use it for pub quizzes and events?</strong><br>
+          Yes, this tool is ideal for pub bingo nights, office parties and local
+          community events. Just make sure your venue allows online tools and sound.</p>
+        <p><strong>Does it work on mobile phones and tablets?</strong><br>
+          Yes. The caller runs in any modern browser on desktop, laptop, tablet or
+          mobile. For larger groups we recommend connecting to a bigger screen.</p>
+        <p><strong>Is the voice always in British English?</strong><br>
+          By default the caller uses a British English voice. The exact voice may
+          depend on your browser and system speech settings.</p>
+      </details>
+
+      <details>
+        <summary>About this project</summary>
+        <p>
+          This website was created as a simple, fast and accessible
+          <strong>90-ball online bingo caller</strong> for people who host bingo
+          nights with friends, family or colleagues. There is no registration,
+          no download and no personal data required to use the tool.
+        </p>
+        <p>
+          If you find this bingo caller useful, feel free to share the link with
+          your friends or use it at your next quiz or bingo night.
+        </p>
+      </details>
+    </section>
 
   </div>
 
@@ -428,6 +452,8 @@
       pool: [...Array(N_MAX)].map((_, i) => i + 1),
       drawn: []
     };
+
+    let isMuted = false;
 
     const board = document.getElementById('board');
     const current = document.getElementById('current');
@@ -443,6 +469,28 @@
     const recentHeader = document.getElementById('recentHeader');
     const recentContent = document.getElementById('recentContent');
     const recentArrow = document.getElementById('recentArrow');
+    const muteToggle = document.getElementById('muteToggle');
+
+    function updateMuteUI() {
+      if (!muteToggle) return;
+      if (isMuted) {
+        muteToggle.classList.add('muted');
+        muteToggle.textContent = '🔇 Sound off';
+        muteToggle.setAttribute('aria-pressed', 'true');
+      } else {
+        muteToggle.classList.remove('muted');
+        muteToggle.textContent = '🔊 Sound on';
+        muteToggle.setAttribute('aria-pressed', 'false');
+      }
+    }
+
+    if (muteToggle) {
+      muteToggle.addEventListener('click', () => {
+        isMuted = !isMuted;
+        updateMuteUI();
+      });
+      updateMuteUI();
+    }
 
     const calls = {
       1:  "Kelly’s Eye",
@@ -590,6 +638,7 @@
     }
 
     function speakCall(n) {
+      if (isMuted || typeof speechSynthesis === 'undefined') return;
       const phrase = calls[n] || n;
       const msg = new SpeechSynthesisUtterance(`Number ${n}, ${phrase}`);
       msg.lang = 'en-GB';
@@ -606,6 +655,7 @@
     }
 
     function playChime() {
+      if (isMuted) return;
       const Ctx = window.AudioContext || window.webkitAudioContext;
       if (!Ctx) return;
       const ctx = new Ctx();
