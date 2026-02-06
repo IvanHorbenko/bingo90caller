@@ -3,32 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <title>Donate | Support Bingo90Caller</title>
-  <meta name="description" content="Support the Bingo90Caller project. Donate via Buy Me a Coffee or PayPal to help keep the site running and improve new features." />
-
-  <link rel="icon" type="image/png" href="/favicon.png">
-  <link rel="shortcut icon" href="/favicon.png" type="image/png">
+  <title>Donate — Bingo90Caller</title>
 
   <style>
     :root{
       --bg:#0f1220;
       --text:#e8ecff;
       --muted:#8a93b2;
-      --card:#161a31;
+      --card:#121735;
+      --card2:#0f1430;
       --border:#2a2f52;
       --accent:#6ee7b7;
       --accent2:#60a5fa;
-      --danger:#fb7185;
     }
-    *{box-sizing:border-box}
+
+    *{ box-sizing:border-box; }
     body{
       margin:0;
-      background:radial-gradient(1200px 700px at 70% -10%, #1a1f3a 0%, var(--bg) 60%);
       color:var(--text);
-      font:16px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background: radial-gradient(1200px 700px at 70% -10%, #1a1f3a 0%, var(--bg) 60%);
+      font: 16px/1.5 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
-    .container{max-width:1100px;margin:24px auto;padding:16px}
+
+    .container{ max-width:1200px; margin:24px auto; padding:16px; }
+
+    /* Header / nav (если у тебя уже есть общий — можешь удалить этот блок и оставить свой) */
     .topbar{
       display:flex;
       align-items:center;
@@ -37,8 +36,9 @@
       flex-wrap:wrap;
       margin-bottom:18px;
     }
-    .brand h1{margin:0;font-size:28px;letter-spacing:.2px}
-    .brand small{color:var(--muted)}
+    .brand h1{ margin:0; font-size:26px; letter-spacing:.2px; }
+    .brand small{ color:var(--muted); }
+
     .nav{
       display:flex;
       gap:10px;
@@ -48,134 +48,166 @@
     .nav a{
       text-decoration:none;
       color:var(--text);
+      padding:10px 12px;
       border:1px solid var(--border);
-      background:rgba(22,26,49,.7);
-      padding:8px 12px;
-      border-radius:12px;
-      font-weight:600;
-      transition:transform .08s ease, background .2s ease, border-color .2s ease;
+      border-radius:999px;
+      background: rgba(18,23,53,.45);
     }
-    .nav a:hover{transform:translateY(-1px);background:rgba(27,32,64,.85);border-color:#3b4376}
     .nav a[aria-current="page"]{
-      border-color:rgba(110,231,183,.65);
-      box-shadow:0 0 0 2px rgba(110,231,183,.12);
+      border-color: rgba(110,231,183,.75);
+      box-shadow: 0 0 0 3px rgba(110,231,183,.12);
     }
 
-    .card{
-      background:rgba(22,26,49,.85);
+    /* Main donate layout */
+    .donate-shell{
+      border:1px solid var(--border);
+      border-radius:24px;
+      background: radial-gradient(circle at 30% 20%, rgba(96,165,250,.10), transparent 45%),
+                  radial-gradient(circle at 70% 0%, rgba(110,231,183,.08), transparent 40%),
+                  rgba(15,18,32,.55);
+      box-shadow: 0 0 70px rgba(0,0,0,.35) inset;
+      padding:22px;
+    }
+
+    .donate-title{
+      margin:0 0 8px 0;
+      font-size:28px;
+      font-weight:900;
+    }
+    .donate-sub{
+      margin:0 0 18px 0;
+      color:var(--muted);
+      max-width:900px;
+    }
+
+    .donate-grid{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap:18px;
+      align-items:start;
+    }
+
+    .panel{
       border:1px solid var(--border);
       border-radius:18px;
-      padding:18px;
-      box-shadow:0 18px 40px rgba(0,0,0,.25);
-    }
-    .grid{
-      display:grid;
-      grid-template-columns:1.1fr .9fr;
-      gap:16px;
-      margin-top:14px;
-    }
-    @media (max-width:900px){
-      .grid{grid-template-columns:1fr}
+      background: linear-gradient(180deg, rgba(18,23,53,.65), rgba(15,20,48,.55));
+      padding:16px;
     }
 
-    .title{
-      margin:0 0 8px;
-      font-size:22px;
+    .panel h3{
+      margin:0 0 6px 0;
+      font-size:18px;
+      font-weight:800;
     }
-    .muted{color:var(--muted)}
-    .bullets{margin:10px 0 0;padding-left:18px;color:var(--muted)}
-    .bullets li{margin:6px 0}
-    .actions{
+    .panel p{ margin:6px 0 10px; color:var(--muted); }
+
+    .btn-row{
       display:flex;
       gap:10px;
       flex-wrap:wrap;
-      margin-top:14px;
+      margin:10px 0 10px;
     }
-    .btn{
+
+    /* Buttons: одинаковая геометрия */
+    .donate-btn{
       display:inline-flex;
       align-items:center;
       justify-content:center;
       gap:8px;
-      padding:12px 14px;
-      border-radius:14px;
+      border-radius:999px;
+      padding:12px 18px;
+      font-weight:800;
       border:0;
       cursor:pointer;
       text-decoration:none;
-      font-weight:800;
+      user-select:none;
+      line-height:1;
+      white-space:nowrap;
+      transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+    }
+    .donate-btn:hover{
+      transform: translateY(-1px);
+      filter: brightness(1.03);
+    }
+    .donate-btn:active{
+      transform: translateY(0);
+    }
+
+    /* BuyMeACoffee style */
+    .btn-bmac{
       color:#0b1020;
-      background:linear-gradient(180deg,var(--accent),#34d399);
-      box-shadow:0 10px 22px rgba(52,211,153,.28);
-    }
-    .btn-secondary{
-      color:#081022;
-      background:linear-gradient(180deg,var(--accent2),#3b82f6);
-      box-shadow:0 10px 22px rgba(59,130,246,.25)
+      background: linear-gradient(180deg, var(--accent), #34d399);
+      box-shadow: 0 10px 22px rgba(52,211,153,.30);
     }
 
-    .btn-paypal {
-  background: linear-gradient(180deg, #60a5fa, #3b82f6);
-  color: #ffffff;
-  text-decoration: none;          /* убираем подчёркивание */
-  display: inline-flex;           /* как кнопка */
-  align-items: center;            /* центр по вертикали */
-  justify-content: center;        /* центр по горизонтали */
-  gap: 8px;
-  border-radius: 999px;           /* капсула */
-  padding: 12px 18px;
-  font-weight: 700;
-  box-shadow: 0 8px 20px rgba(59,130,246,.35);
-}
+    /* PayPal style - но геометрия 1:1 */
+    .btn-paypal{
+      color:#ffffff;
+      background: linear-gradient(180deg, var(--accent2), #3b82f6);
+      box-shadow: 0 10px 22px rgba(59,130,246,.30);
+    }
 
-.btn-paypal:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 12px 26px rgba(59,130,246,.45);
-}
-
-.btn-paypal:active {
-  transform: translateY(0);
-}
-    .btn:active,.btn-secondary:active{transform:translateY(1px)}
-    .note{
-      margin-top:10px;
-      font-size:13px;
+    .tip{
+      color:var(--muted);
+      margin-top:8px;
+      font-size:14px;
+    }
+    .bullets{
+      margin:14px 0 0;
+      padding-left:18px;
       color:var(--muted);
     }
+    .bullets li{ margin:6px 0; }
 
-    .mini{
-      display:grid;
-      gap:10px;
+    .stack{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
     }
-    .mini .box{
-      padding:14px;
-      border-radius:16px;
+
+    .mini-card{
       border:1px solid var(--border);
-      background:rgba(15,18,32,.35);
+      border-radius:16px;
+      background: linear-gradient(180deg, rgba(18,23,53,.55), rgba(15,20,48,.45));
+      padding:14px;
     }
-    .mini h3{margin:0 0 6px;font-size:16px}
-    .mini p{margin:0;color:var(--muted)}
-    .links{
+    .mini-card h4{
+      margin:0 0 6px;
+      font-size:16px;
+      font-weight:800;
+    }
+    .mini-card p{ margin:0; color:var(--muted); }
+
+    .share-links{
       margin-top:10px;
       display:flex;
-      gap:10px;
+      gap:12px;
       flex-wrap:wrap;
+      align-items:center;
     }
-    .link{
+    .share-links a{
       color:var(--text);
       text-decoration:none;
       border-bottom:1px dashed rgba(232,236,255,.35);
     }
-    .link:hover{border-bottom-color:rgba(232,236,255,.75)}
+    .share-links a:hover{
+      border-bottom-color: rgba(232,236,255,.7);
+    }
+
+    @media (max-width: 900px){
+      .donate-grid{ grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 
 <body>
   <div class="container">
 
-    <!-- Header -->
+    <!-- Если у тебя общий хедер на всех страницах — замени этим блоком свой -->
     <div class="topbar">
       <div class="brand">
         <h1>Online Bingo Caller 1–90</h1>
-        <small>Free 90-ball bingo number generator with voice calls 🔔</small>
+        <small>Free 90-ball bingo number generator with “ding” sound and British voice calls 🔔</small>
       </div>
 
       <nav class="nav">
@@ -188,40 +220,36 @@
       </nav>
     </div>
 
-    <!-- Content -->
-    <div class="card">
-      <h2 class="title">Support the project ❤️</h2>
-      <p class="muted">
+    <section class="donate-shell">
+      <h2 class="donate-title">Support the project ❤️</h2>
+      <p class="donate-sub">
         If you enjoy using this free bingo caller, you can help me keep it online and improving.
         Your support covers hosting, domain costs, and time spent adding new features.
       </p>
 
-      <div class="grid">
-        <!-- Left -->
-        <div class="card" style="background:rgba(15,18,32,.25)">
-          <h3 style="margin:0 0 8px">Choose a method</h3>
-          <p class="muted" style="margin:0">
-            Pick what’s easiest for you:
-          </p>
+      <div class="donate-grid">
+        <!-- LEFT -->
+        <div class="panel">
+          <h3>Choose a method</h3>
+          <p>Pick what’s easiest for you:</p>
 
-          <div class="actions">
-            <a class="btn" href="https://buymeacoffee.com/bingo90caller" target="_blank" rel="noopener">
+          <div class="btn-row">
+            <a class="donate-btn btn-bmac"
+               href="https://buymeacoffee.com/bingo90caller"
+               target="_blank" rel="noopener">
               ☕ Buy Me a Coffee
             </a>
 
-         <a
-  href="https://paypal.me/IvanHorbenko12"
-  target="_blank"
-  rel="noopener"
-  class="btn btn-paypal"
->
-  💙 Donate via PayPal
-</a>
+            <a class="donate-btn btn-paypal"
+               href="https://paypal.me/IvanHorbenko12"
+               target="_blank" rel="noopener">
+              💙 Donate via PayPal
+            </a>
+          </div>
 
-          <p class="note">
-            Tip: if you’re running a pub quiz or an event, even a small donation helps a lot.
-            Thank you!
-          </p>
+          <div class="tip">
+            Tip: if you’re running a pub quiz or an event, even a small donation helps a lot. Thank you!
+          </div>
 
           <ul class="bullets">
             <li>No ads, no tracking tricks — just a simple helpful tool.</li>
@@ -230,33 +258,30 @@
           </ul>
         </div>
 
-        <!-- Right -->
-        <div class="mini">
-          <div class="box">
-            <h3>What your donation supports</h3>
+        <!-- RIGHT -->
+        <div class="stack">
+          <div class="mini-card">
+            <h4>What your donation supports</h4>
             <p>Hosting, domain renewal, and new features (more voices, better UI, extra game modes).</p>
           </div>
 
-          <div class="box">
-            <h3>About the creator</h3>
-            <p>
-              Hi! I’m Ivan. I built this site because my friends and I love playing bingo —
-              and I wanted a simple online caller that just works.
-            </p>
+          <div class="mini-card">
+            <h4>About the creator</h4>
+            <p>Hi! I’m Ivan. I built this site because my friends and I love playing bingo — and I wanted a simple online caller that just works.</p>
           </div>
 
-          <div class="box">
-            <h3>Share the project</h3>
+          <div class="mini-card">
+            <h4>Share the project</h4>
             <p>Even sharing the link helps a lot.</p>
-            <div class="links">
-              <a class="link" href="https://bingo90caller.online/" target="_blank" rel="noopener">bingo90caller.online</a>
-              <span class="muted">•</span>
-              <a class="link" href="contact.html">Contact me</a>
+            <div class="share-links">
+              <a href="https://bingo90caller.online/" target="_blank" rel="noopener">bingo90caller.online</a>
+              <span style="color:var(--muted)">•</span>
+              <a href="contact.html">Contact me</a>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
   </div>
 </body>
