@@ -3,7 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Donate — Bingo90Caller</title>
+
+  <title>Donate | Online Bingo Caller 1–90</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Support the Online Bingo Caller 1–90 project. Help keep this free 90-ball bingo caller online and improving by donating via Buy Me a Coffee or PayPal." />
+  <meta name="keywords" content="donate bingo caller, support bingo caller, buy me a coffee bingo, paypal donate bingo, 90 ball bingo support" />
+  <meta name="author" content="Ivan" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Donate | Online Bingo Caller 1–90" />
+  <meta property="og:description" content="Support this free online 90-ball bingo caller. Donations help cover hosting, domain costs, and new features." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bingo90caller.online/donate.html" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="shortcut icon" href="/favicon.png" type="image/png">
 
   <style>
     :root{
@@ -22,43 +38,53 @@
       margin:0;
       color:var(--text);
       background: radial-gradient(1200px 700px at 70% -10%, #1a1f3a 0%, var(--bg) 60%);
-      font: 16px/1.5 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font: 16px/1.6 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
     .container{ max-width:1200px; margin:24px auto; padding:16px; }
 
-    /* Header / nav (если у тебя уже есть общий — можешь удалить этот блок и оставить свой) */
-    .topbar{
+    /* === HEADER (1:1 как Contact) === */
+    .header{
       display:flex;
-      align-items:center;
+      align-items:flex-start;
       justify-content:space-between;
-      gap:16px;
       flex-wrap:wrap;
+      gap:14px;
       margin-bottom:18px;
     }
-    .brand h1{ margin:0; font-size:26px; letter-spacing:.2px; }
-    .brand small{ color:var(--muted); }
+    .title h1{ margin:0; font-weight:800; font-size:34px; }
+    .title small{ color:var(--muted); }
 
     .nav{
       display:flex;
-      gap:10px;
       flex-wrap:wrap;
+      gap:10px;
       align-items:center;
+      justify-content:flex-end;
     }
     .nav a{
       text-decoration:none;
       color:var(--text);
+      font-weight:700;
+      font-size:14px;
       padding:10px 12px;
-      border:1px solid var(--border);
-      border-radius:999px;
-      background: rgba(18,23,53,.45);
+      border-radius:12px;
+      background: rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.08);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      white-space:nowrap;
     }
-    .nav a[aria-current="page"]{
-      border-color: rgba(110,231,183,.75);
-      box-shadow: 0 0 0 3px rgba(110,231,183,.12);
+    .nav a:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,0.07);
+      border-color: rgba(255,255,255,0.14);
+    }
+    .nav a.active{
+      background: linear-gradient(180deg, rgba(110,231,183,0.22), rgba(52,211,153,0.12));
+      border-color: rgba(110,231,183,0.35);
     }
 
-    /* Main donate layout */
+    /* === DONATE PAGE (НЕ ТРОГАЕМ ЛОГИКУ) === */
     .donate-shell{
       border:1px solid var(--border);
       border-radius:24px;
@@ -69,16 +95,8 @@
       padding:22px;
     }
 
-    .donate-title{
-      margin:0 0 8px 0;
-      font-size:28px;
-      font-weight:900;
-    }
-    .donate-sub{
-      margin:0 0 18px 0;
-      color:var(--muted);
-      max-width:900px;
-    }
+    .donate-title{ margin:0 0 8px; font-size:28px; font-weight:900; }
+    .donate-sub{ margin:0 0 18px; color:var(--muted); max-width:900px; }
 
     .donate-grid{
       display:grid;
@@ -94,21 +112,11 @@
       padding:16px;
     }
 
-    .panel h3{
-      margin:0 0 6px 0;
-      font-size:18px;
-      font-weight:800;
-    }
+    .panel h3{ margin:0 0 6px; font-size:18px; font-weight:800; }
     .panel p{ margin:6px 0 10px; color:var(--muted); }
 
-    .btn-row{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin:10px 0 10px;
-    }
+    .btn-row{ display:flex; gap:10px; flex-wrap:wrap; margin:10px 0; }
 
-    /* Buttons: одинаковая геометрия */
     .donate-btn{
       display:inline-flex;
       align-items:center;
@@ -120,82 +128,44 @@
       border:0;
       cursor:pointer;
       text-decoration:none;
-      user-select:none;
-      line-height:1;
       white-space:nowrap;
       transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
     }
-    .donate-btn:hover{
-      transform: translateY(-1px);
-      filter: brightness(1.03);
-    }
-    .donate-btn:active{
-      transform: translateY(0);
-    }
+    .donate-btn:hover{ transform: translateY(-1px); filter:brightness(1.03); }
 
-    /* BuyMeACoffee style */
     .btn-bmac{
       color:#0b1020;
       background: linear-gradient(180deg, var(--accent), #34d399);
       box-shadow: 0 10px 22px rgba(52,211,153,.30);
     }
-
-    /* PayPal style - но геометрия 1:1 */
     .btn-paypal{
-      color:#ffffff;
+      color:#fff;
       background: linear-gradient(180deg, var(--accent2), #3b82f6);
       box-shadow: 0 10px 22px rgba(59,130,246,.30);
     }
 
-    .tip{
-      color:var(--muted);
-      margin-top:8px;
-      font-size:14px;
-    }
-    .bullets{
-      margin:14px 0 0;
-      padding-left:18px;
-      color:var(--muted);
-    }
+    .bullets{ margin:14px 0 0; padding-left:18px; color:var(--muted); }
     .bullets li{ margin:6px 0; }
 
-    .stack{
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-    }
-
+    .stack{ display:flex; flex-direction:column; gap:12px; }
     .mini-card{
       border:1px solid var(--border);
       border-radius:16px;
       background: linear-gradient(180deg, rgba(18,23,53,.55), rgba(15,20,48,.45));
       padding:14px;
     }
-    .mini-card h4{
-      margin:0 0 6px;
-      font-size:16px;
-      font-weight:800;
-    }
+    .mini-card h4{ margin:0 0 6px; font-size:16px; font-weight:800; }
     .mini-card p{ margin:0; color:var(--muted); }
 
-    .share-links{
-      margin-top:10px;
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      align-items:center;
-    }
+    .share-links{ margin-top:10px; display:flex; gap:12px; flex-wrap:wrap; }
     .share-links a{
       color:var(--text);
       text-decoration:none;
       border-bottom:1px dashed rgba(232,236,255,.35);
     }
-    .share-links a:hover{
-      border-bottom-color: rgba(232,236,255,.7);
-    }
 
-    @media (max-width: 900px){
-      .donate-grid{ grid-template-columns: 1fr; }
+    @media (max-width:900px){
+      .donate-grid{ grid-template-columns:1fr; }
     }
   </style>
 </head>
@@ -203,23 +173,24 @@
 <body>
   <div class="container">
 
-    <!-- Если у тебя общий хедер на всех страницах — замени этим блоком свой -->
-    <div class="topbar">
-      <div class="brand">
+    <!-- HEADER -->
+    <div class="header">
+      <div class="title">
         <h1>Online Bingo Caller 1–90</h1>
         <small>Free 90-ball bingo number generator with “ding” sound and British voice calls 🔔</small>
       </div>
 
-      <nav class="nav">
+      <nav class="nav" aria-label="Main menu">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="what-is.html">What is 90-ball Bingo?</a>
         <a href="faq.html">FAQ</a>
         <a href="contact.html">Contact</a>
-        <a href="donate.html" aria-current="page">Donate</a>
+        <a class="active" href="donate.html">Donate</a>
       </nav>
     </div>
 
+    <!-- CONTENT -->
     <section class="donate-shell">
       <h2 class="donate-title">Support the project ❤️</h2>
       <p class="donate-sub">
@@ -228,27 +199,17 @@
       </p>
 
       <div class="donate-grid">
-        <!-- LEFT -->
         <div class="panel">
           <h3>Choose a method</h3>
           <p>Pick what’s easiest for you:</p>
 
           <div class="btn-row">
-            <a class="donate-btn btn-bmac"
-               href="https://buymeacoffee.com/bingo90caller"
-               target="_blank" rel="noopener">
+            <a class="donate-btn btn-bmac" href="https://buymeacoffee.com/bingo90caller" target="_blank" rel="noopener">
               ☕ Buy Me a Coffee
             </a>
-
-            <a class="donate-btn btn-paypal"
-               href="https://paypal.me/IvanHorbenko12"
-               target="_blank" rel="noopener">
+            <a class="donate-btn btn-paypal" href="https://paypal.me/IvanHorbenko12" target="_blank" rel="noopener">
               💙 Donate via PayPal
             </a>
-          </div>
-
-          <div class="tip">
-            Tip: if you’re running a pub quiz or an event, even a small donation helps a lot. Thank you!
           </div>
 
           <ul class="bullets">
@@ -258,23 +219,19 @@
           </ul>
         </div>
 
-        <!-- RIGHT -->
         <div class="stack">
           <div class="mini-card">
             <h4>What your donation supports</h4>
             <p>Hosting, domain renewal, and new features (more voices, better UI, extra game modes).</p>
           </div>
-
           <div class="mini-card">
             <h4>About the creator</h4>
             <p>Hi! I’m Ivan. I built this site because my friends and I love playing bingo — and I wanted a simple online caller that just works.</p>
           </div>
-
           <div class="mini-card">
             <h4>Share the project</h4>
-            <p>Even sharing the link helps a lot.</p>
             <div class="share-links">
-              <a href="https://bingo90caller.online/" target="_blank" rel="noopener">bingo90caller.online</a>
+              <a href="https://bingo90caller.online/">bingo90caller.online</a>
               <span style="color:var(--muted)">•</span>
               <a href="contact.html">Contact me</a>
             </div>
