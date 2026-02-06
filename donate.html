@@ -109,9 +109,31 @@
     .btn-secondary{
       color:#081022;
       background:linear-gradient(180deg,var(--accent2),#3b82f6);
-      box-shadow:0 10px 22px rgba(59,130,246,.25);
-      border-radius:999px;
+      box-shadow:0 10px 22px rgba(59,130,246,.25)
     }
+
+    .btn-paypal {
+  background: linear-gradient(180deg, #60a5fa, #3b82f6);
+  color: #ffffff;
+  text-decoration: none;          /* убираем подчёркивание */
+  display: inline-flex;           /* как кнопка */
+  align-items: center;            /* центр по вертикали */
+  justify-content: center;        /* центр по горизонтали */
+  gap: 8px;
+  border-radius: 999px;           /* капсула */
+  padding: 12px 18px;
+  font-weight: 700;
+  box-shadow: 0 8px 20px rgba(59,130,246,.35);
+}
+
+.btn-paypal:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 26px rgba(59,130,246,.45);
+}
+
+.btn-paypal:active {
+  transform: translateY(0);
+}
     .btn:active,.btn-secondary:active{transform:translateY(1px)}
     .note{
       margin-top:10px;
@@ -187,10 +209,14 @@
               ☕ Buy Me a Coffee
             </a>
 
-            <a class="btn-secondary" href="https://paypal.me/IvanHorbenko12" target="_blank" rel="noopener">
-              💙 Donate via PayPal
-            </a>
-          </div>
+         <a
+  href="https://paypal.me/IvanHorbenko12"
+  target="_blank"
+  rel="noopener"
+  class="btn btn-paypal"
+>
+  💙 Donate via PayPal
+</a>
 
           <p class="note">
             Tip: if you’re running a pub quiz or an event, even a small donation helps a lot.
