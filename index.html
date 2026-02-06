@@ -326,7 +326,8 @@ button {
       <!-- ✅ Start placeholder (shows before first draw) -->
       <div class="placeholder" id="placeholder">Let’s play <span>Bingo!</span></div>
 
-      <div class="n" id="current">—</div>
+      <!-- ✅ IMPORTANT: no "—" here, иначе снова будет белая плашка -->
+      <div class="n" id="current"></div>
       <div class="phrase" id="phrase"></div>
     </div>
 
@@ -457,13 +458,17 @@ button {
 
   function render() {
     const hasNumber = state.drawn.length > 0;
-    const n = hasNumber ? state.drawn[state.drawn.length - 1] : '—';
-    current.textContent = n;
+    const n = hasNumber ? state.drawn[state.drawn.length - 1] : null;
 
-    // ✅ show placeholder only before first number
+    // ✅ hide placeholder after first draw
     if (placeholder) placeholder.style.display = hasNumber ? 'none' : 'flex';
 
-    phraseEl.textContent = calls[n] || '';
+    // ✅ IMPORTANT: when there is no number, show nothing (no dash)
+    current.textContent = hasNumber ? String(n) : '';
+
+    // phrase only when there is a number
+    phraseEl.textContent = hasNumber ? (calls[n] || '') : '';
+
     for (const [num, el] of cells) el.classList.toggle('on', state.drawn.includes(num));
     recent.innerHTML = state.drawn.slice(-10).reverse().map(num => `<span>${num}</span>`).join('');
   }
