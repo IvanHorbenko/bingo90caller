@@ -81,6 +81,7 @@ body {
   background: linear-gradient(180deg, rgba(110,231,183,0.22), rgba(52,211,153,0.12));
   border-color: rgba(110,231,183,0.35);
 }
+
 .controls {
   display:flex;
   align-items:center;
@@ -111,7 +112,9 @@ button {
   gap:6px;
 }
 .mute-btn.muted { opacity:0.75; background:#1e2338; }
+
 .bigball {
+  position: relative; /* ✅ needed for placeholder positioning */
   display:flex;
   flex-direction:column;
   align-items:center;
@@ -128,6 +131,34 @@ button {
   transform: scale(1.05);
   box-shadow:0 0 120px rgba(245,158,11,0.6) inset, 0 0 40px rgba(245,158,11,0.5);
 }
+
+/* ✅ Placeholder (start screen) */
+.placeholder{
+  position:absolute;
+  inset: 0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  font-size:56px;
+  font-weight:900;
+  letter-spacing:1px;
+  color:rgba(232,236,255,0.86);
+  text-shadow:0 0 34px rgba(96,165,250,0.35);
+  pointer-events:none;
+  user-select:none;
+  padding: 16px;
+  animation: pulse 2.8s ease-in-out infinite;
+}
+.placeholder span{
+  color: var(--accent);
+}
+@keyframes pulse{
+  0%{ opacity:.45; transform: translateY(0); }
+  50%{ opacity:.90; transform: translateY(-2px); }
+  100%{ opacity:.45; transform: translateY(0); }
+}
+
 .bigball .n {
   font-size:260px;
   font-weight:900;
@@ -232,6 +263,7 @@ button {
 .footer-seo p, .footer-seo ul { margin: 6px 0 8px; }
 .footer-seo ul { padding-left: 18px; }
 .footer-seo li { margin-bottom: 4px; }
+
 .donate-grid {
   display:grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -241,6 +273,7 @@ button {
 @media (max-width: 900px){
   .donate-grid { grid-template-columns: 1fr; }
   .bigball .n { font-size: 180px; }
+  .placeholder{ font-size: 40px; } /* ✅ mobile */
 }
 .donate-card{
   background: var(--card);
@@ -282,7 +315,6 @@ button {
       </nav>
     </div>
 
-
     <div class="controls">
       <button id="muteToggle" class="mute-btn" aria-pressed="false">🔊 Sound on</button>
       <button id="drawBtn">🎱 Draw Number</button>
@@ -291,6 +323,9 @@ button {
     </div>
 
     <div class="bigball" id="bigBall">
+      <!-- ✅ Start placeholder (shows before first draw) -->
+      <div class="placeholder" id="placeholder">Let’s play <span>Bingo!</span></div>
+
       <div class="n" id="current">—</div>
       <div class="phrase" id="phrase"></div>
     </div>
@@ -339,6 +374,7 @@ button {
   const drawBtn = document.getElementById('drawBtn');
   const undoBtn = document.getElementById('undoBtn');
   const resetBtn = document.getElementById('resetBtn');
+  const placeholder = document.getElementById('placeholder'); // ✅
 
   const boardHeader = document.getElementById('boardHeader');
   const boardContent = document.getElementById('boardContent');
@@ -420,8 +456,13 @@ button {
   }
 
   function render() {
-    const n = state.drawn.length ? state.drawn[state.drawn.length - 1] : '—';
+    const hasNumber = state.drawn.length > 0;
+    const n = hasNumber ? state.drawn[state.drawn.length - 1] : '—';
     current.textContent = n;
+
+    // ✅ show placeholder only before first number
+    if (placeholder) placeholder.style.display = hasNumber ? 'none' : 'flex';
+
     phraseEl.textContent = calls[n] || '';
     for (const [num, el] of cells) el.classList.toggle('on', state.drawn.includes(num));
     recent.innerHTML = state.drawn.slice(-10).reverse().map(num => `<span>${num}</span>`).join('');
@@ -482,8 +523,6 @@ button {
   render();
 </script>
 
-
-
 <section class="footer-seo">
   <h2>Learn more about this 90-ball bingo caller</h2>
 
@@ -533,7 +572,6 @@ button {
     </p>
   </details>
 </section>
-
 
   </div>
 </body>
