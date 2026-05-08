@@ -1,24 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
- <link rel="canonical" href="https://bingo90caller.online/contact.html" />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#0f1220">
+  <link rel="canonical" href="https://bingo90caller.online/contact.html" />
 
-  <title>Contact | Online Bingo Caller 1–90</title>
+  <title>Contact | Online Bingo Caller 1-90</title>
 
   <!-- SEO -->
-  <meta name="description" content="Contact the creator of Online Bingo Caller 1–90. Send feedback, report issues, or ask questions about using this free 90-ball bingo caller for events and pub quizzes." />
-  <meta name="keywords" content="contact bingo caller, bingo caller support, report bug bingo caller, 90 ball bingo caller contact" />
+  <meta name="description" content="Contact the creator of Online Bingo Caller 1-90. Send feedback, report issues, or ask questions about using this free 90-ball bingo caller for events and pub quizzes." />
   <meta name="author" content="Ivan" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Contact | Online Bingo Caller 1–90" />
+  <meta property="og:title" content="Contact | Online Bingo Caller 1-90" />
   <meta property="og:description" content="Contact the creator of this free online 90-ball bingo caller." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bingo90caller.online/contact.html" />
+  <meta property="og:site_name" content="Online Bingo Caller 1-90" />
+  <meta property="og:image" content="https://bingo90caller.online/favicon.png" />
+  <meta property="og:locale" content="en_GB" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Contact | Online Bingo Caller 1-90" />
+  <meta name="twitter:description" content="Contact the creator of this free online 90-ball bingo caller." />
+  <meta name="twitter:image" content="https://bingo90caller.online/favicon.png" />
+
+  <!-- Structured data: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://bingo90caller.online/" },
+      { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://bingo90caller.online/contact.html" }
+    ]
+  }
+  </script>
 
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="shortcut icon" href="/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/favicon.png">
 
   <style>
     :root {
@@ -146,11 +170,22 @@
       </p>
 
       <div class="contact-box">
-        <p><strong>Email:</strong> <a href="mailto:ivan.gorbenko89@gmail.com">ivan.gorbenko89@gmail.com</a></p>
+        <p><strong>Email:</strong> <a id="contact-email" href="#" rel="nofollow">click to reveal</a></p>
         <p class="muted" style="margin-top:6px;">
           Tip: If you report a bug, include your browser name/version and what you clicked.
         </p>
       </div>
+
+      <script>
+        (function(){
+          var user = ['ivan','gorbenko89'].join('.');
+          var domain = ['gmail','com'].join('.');
+          var addr = user + '@' + domain;
+          var link = document.getElementById('contact-email');
+          link.href = 'mailto:' + addr;
+          link.textContent = addr;
+        })();
+      </script>
 
       <div class="links">
         <a href="index.html">Go to the Bingo Caller</a>
