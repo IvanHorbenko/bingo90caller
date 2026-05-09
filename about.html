@@ -66,11 +66,7 @@
 
     /* Header */
     .header {
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      flex-wrap:wrap;
-      gap:14px;
+      display:block;
       margin-bottom: 18px;
     }
     .title h1 { margin:0; font-weight:800; font-size: 34px; }
@@ -81,7 +77,8 @@
       flex-wrap:wrap;
       gap:10px;
       align-items:center;
-      justify-content:flex-end;
+      justify-content:flex-start;
+      margin-top: 14px;
     }
     .nav a{
       text-decoration:none;
@@ -156,14 +153,15 @@
     <div class="header">
       <div class="title">
         <h1>Online Bingo Caller 1–90</h1>
-        <small>Free 90-ball bingo number generator with “ding” sound and British voice calls 🔔</small><br>
-        <span class="badge">📄 About this project</span>
+        <small>Free 90-ball bingo number generator with “ding” sound and British voice calls 🔔</small>
       </div>
 
       <nav class="nav" aria-label="Main menu">
         <a href="index.html">Home</a>
         <a class="active" href="about.html">About</a>
         <a href="what-is.html">What is 90-ball Bingo?</a>
+        <a href="bingo-calls.html">Bingo Calls</a>
+        <a href="printable-bingo-cards.html">Print Cards</a>
         <a href="faq.html">FAQ</a>
         <a href="contact.html">Contact</a>
         <a href="donate.html">Donate</a>
